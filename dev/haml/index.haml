@@ -1,0 +1,124 @@
+!!!
+/[if IE 9] <html class="ie9" lang="en">
+<!--[if gt IE 9]><!-->
+%html{:lang => "en"}<>
+	<!--<![endif]-->
+
+	= Haml::Engine.new(File.read("dev/haml/partials/_doc_head.haml")).render
+
+	%body
+
+		#svgInject
+			/ inject:svg
+			/ endinject
+
+		= Haml::Engine.new(File.read("dev/haml/partials/_html_header.haml")).render
+
+		%main{:role => "main"}
+
+			%section#why.why
+
+				%div{"data-container" => "width_800"}
+
+					%article
+
+						%h2 Why are More Businesses Switching from Netcelerate to Versature?
+						%p Versature is supremely focused on what has made it successful - providing Hosted PBX business phone services to our clients across Canada. Versature does not offer IT services such as email hosting, website hosting or other services that might interfere with our core business.
+						%p With advanced call analytics providing new business insights, in-demand features like Call Recording and Voicemail Transcription, and a suite of mobile apps to take your system on-the-go, it’s clear why more and more businesses are relying on Versature for their communications needs.
+
+			%section#features.features
+
+				%div{"data-container" => "width_720"}
+
+					%article.reliability
+
+						%svg.ui_handshake{:viewBox => "0 0 64 38"}
+							%use{"xlink:href" => "#ui_handshake"}
+
+						%h4 Reliability
+						:plain
+							<p>Versature prides itself in providing the highest quality Hosted PBX service. With georedunant data facilities (East and West coast), a live and historical system status page at <a href="http://trust.versature.com" title="Trust Versature">http:<span class="font_arial">//</span>trust.versature.com</a> and a binding Service Level Agreement reinforcing our promise to you, you can feel confident Versature has you covered.</p>
+
+					%article.scalability
+
+						%svg.ui_scale{:viewBox => "0 0 64 64"}
+							%use{"xlink:href" => "#ui_scale"}
+
+						%h4 Scalability
+						%p Businesses with 5 - 5,000 employees located anywhere in Canada, Versature is there to grow and evolve with your team. Add new seats quickly and easily or adjust for seasonal fluctuations. Moves, Adds and Changes are made painlessly with Versature.
+
+					%article.support
+
+						%svg.ui_headset{:viewBox => "0 0 48 64"}
+							%use{"xlink:href" => "#ui_headset"}
+
+						%h4 Support
+						%p A specialized, Canadian-based support team focused on getting your business up and running with the right solution and providing ongoing dedicated support for years to come. Accessible through your medium of choice (by dialing 6-1-1, sending an email, or accessing live chat).
+
+					%article.pricing
+
+						%svg.ui_pricetag{:viewBox => "0 0 56 64"}
+							%use{"xlink:href" => "#ui_pricetag"}
+
+						%h4 Transparent, Upfront Pricing
+						%p KISS away billing pain with easy-to-read quotes and invoices. No hidden costs, no surprise fees, no auto-renewing contracts.
+
+					%article.integrations
+
+						%svg.ui_gears{:viewBox => "0 0 64 47"}
+							%use{"xlink:href" => "#ui_gears"}
+
+						%h4 Integrations
+						%p From Salesforce and CRM tools to Google Chrome web browsers to our own API, Versature offers endless integration options enabling your business to make inbound and outbound calls and view call statistics from within your existing business processes.
+
+			%section#brands.brands
+
+				%div{"data-container" => "width_704"}
+
+					%article
+
+						%h2 Top Brands Trust Versature to Power Their Communications
+
+						%ul.list_brands.clearfix
+							%li.brand_branham.wrap_img
+								%img{:src => "assets/img/logo_branham.png", :alt => ""}
+							%li.brand_magmic.wrap_img
+								%img{:src => "assets/img/logo_magmic.png", :alt => ""}
+							%li.brand_shopify.wrap_svg
+								%svg.logo_shopify{:viewBox => "0 0 240 69"}
+									%use{"xlink:href" => "#logo_shopify"}
+							%li.brand_startup.wrap_svg
+								%svg.logo_startup{:viewBox => "0 0 240 86"}
+									%use{"xlink:href" => "#logo_startup"}
+							%li.brand_sunmedia.wrap_svg
+								%svg.logo_sunmedia{:viewBox => "0 0 240 54"}
+									%use{"xlink:href" => "#logo_sunmedia"}
+							%li.brand_tweed.wrap_img
+								%img{:src => "assets/img/logo_tweed.png", :alt => ""}
+							%li.brand_windmill.wrap_img
+								%img{:src => "assets/img/logo_windmill.png", :alt => ""}
+
+
+			%section#signup.signup
+
+				%div{"data-container" => "width_800"}
+
+					%article
+
+						%h4 Sign up
+						%p Sign up now and get your first three months free. Want even more great incentives? Ask one of our Account Managers about our "No-Hardware" promotion. Switching to Versature has never been this easy!
+						%h5 Have one of our Account Managers contact you with more information.
+
+						%form#form_signup.form_signup{:action => "", :method => "", :name => ""}
+
+							.wrap_inputs{"data-container" => "width_388"}
+								%input#signup_fname.signup_fname{:type => "text", :name => "signup_fname", :value => "", :placeholder => "First Name", :required => true}
+								%input#signup_lname.signup_lname{:type => "text", :name => "signup_lname", :value => "", :placeholder => "Last Name", :required => true}
+								%input#signup_email.signup_email{:type => "text", :name => "signup_email", :value => "", :placeholder => "your@email.com", :required => true}
+								%input#signup_tel.signup_tel{:type => "tel", :name => "signup_tel", :value => "", :placeholder => "Phone Number", :required => true}
+
+							%input#signup_submit{:type => "submit", :value => "Submit", :name => "submit"}
+
+		= Haml::Engine.new(File.read("dev/haml/partials/_html_footer.haml")).render
+
+		-# = Haml::Engine.new(File.read("dev/haml/partials/_doc_scripts.haml")).render

@@ -1,0 +1,115 @@
+// ==|== media queries ========================================================
+// ============================================================================
+
+@media only screen and (min-width: 768px) {
+
+	// General Styles
+	// ----------------------------------------------------------------------------
+	// --- Sections --- \\
+	header,
+	footer,
+	section {
+		padding: 8rem 3.2rem;
+	}
+	// --- Content --- \\
+	h2 {
+		margin-bottom: 4.2rem;
+		font-size: 4.8rem;
+		line-height: 1.2;
+	}
+	h3 {
+		font-size: 4rem;
+	}
+	h4 {
+		margin-bottom: 3.2rem;
+		font-size: 4rem;
+	}
+	h5 {
+		margin-top: 5.2rem;
+		margin-bottom: 6.4rem;
+		font-size: 2.6rem;
+	}
+	p {
+		font-size: 1.8rem;
+	}
+
+	// Header
+	// ----------------------------------------------------------------------------
+	header a.wrap_svg {
+		margin-bottom: 12rem;
+	}
+	header p {
+		margin-bottom: 5.2rem;
+	}
+	// --- Navigation: Primary --- \\
+	nav.nav_primary {
+		margin-bottom: 12rem;
+	}
+	nav.nav_primary ul li {
+		margin-right: 6rem;
+	}
+	nav.nav_primary ul li a {
+		font-size: 2rem;
+	}
+
+	// Footer
+	// ----------------------------------------------------------------------------
+	// --- Navigation: Secondary --- \\
+	nav.nav_secondary {
+		margin-bottom: 8rem;
+	}
+	nav.nav_secondary ul {
+		float: left;
+	}
+	nav.nav_secondary ul:not(.nav_social) {
+		margin-right: 2rem;
+		margin-bottom: 0;
+		width: calc(27.5% - 2rem);
+	}
+	nav.nav_secondary ul.nav_social {
+		width: 17.5%;
+	}
+
+	// Why
+	// ----------------------------------------------------------------------------
+	section.why p {
+		margin-bottom: 3.2rem;
+	}
+
+	// Features
+	// ----------------------------------------------------------------------------
+	section.features article:not(.integrations) {
+		margin-bottom: 9rem;
+	}
+
+	// Brands
+	// ----------------------------------------------------------------------------
+	section.brands h2 {
+		margin-bottom: 6rem;
+	}
+	// --- Brands List --- \\
+	ul.list_brands {
+		width: 100%;
+	}
+	ul.list_brands li.brand_branham,
+	ul.list_brands li.brand_magmic,
+	ul.list_brands li.brand_startup,
+	ul.list_brands li.brand_sunmedia {
+		margin-right: 6.7rem;
+	}
+	ul.list_brands li.brand_shopify {
+		margin-right: 0;
+	}
+	ul.list_brands li:not(.brand_windmill) {
+		margin-bottom: 4.2rem;
+		width: 19rem;
+		min-height: 9.4rem;
+		line-height: 9.4rem;
+	}
+
+}
+
+/*
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { // IE10 & IE11
+}
+*/

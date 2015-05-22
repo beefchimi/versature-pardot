@@ -1,0 +1,26 @@
+// SASS Variables
+// ----------------------------------------------------------------------------
+$hsl_blue:   hsl(196,80%,46%);
+$hsl_navy:   hsl(210,41%,40%);
+$hsl_yellow: hsl(40,81%,62%);
+$hsl_green:  hsl(134,48%,57%);
+$hsl_red:    hsl(3,63%,55%);
+$hsl_snow:   hsl(280,14%,96%);
+$hsl_cyanD:  hsl(185,89%,44%);
+$hsl_cyanL:  hsl(185,86%,62%);
+
+$hsl_L0:     hsl(0,0%,0%);
+$hsl_L2:     hsl(0,0%,2%);
+$hsl_L10:    hsl(0,0%,10%);
+$hsl_L24:    hsl(0,0%,24%);
+$hsl_L40:    hsl(0,0%,40%);
+$hsl_L50:    hsl(0,0%,50%);
+$hsl_L80:    hsl(0,0%,80%);
+$hsl_L100:   hsl(0,0%,100%);
+
+
+// One stylesheet to rule them all
+// ----------------------------------------------------------------------------
+@import 'base';
+@import 'main';
+@import 'queries';

@@ -1,0 +1,440 @@
+// ==|== primary styles =======================================================
+// Author: Curtis Dulmage
+// ============================================================================
+
+// Foundation
+// ----------------------------------------------------------------------------
+html,
+input,
+button {
+	font-family: 'futura-pt', Futura, 'Trebuchet MS', Arial, sans-serif;
+}
+body {
+	position: relative;
+	background-color: $hsl_snow;
+}
+::selection {
+	background-color: $hsl_cyanL;
+}
+// + autoprefixer does not recognize placeholder + \\
+::-webkit-input-placeholder {
+	color: $hsl_L40;
+}
+::-moz-placeholder {
+	color: $hsl_L40;
+	opacity: 1;
+}
+:-ms-input-placeholder {
+	color: $hsl_L40;
+}
+/*
+// --- Lock Scrolling On Load --- \\
+html {
+	min-height: 100%;
+	overflow-y: scroll;
+}
+html[data-ready="waiting"] body {
+	overflow-y: hidden;
+}
+html[data-ready="loaded"] body {
+	overflow-y: visible;
+}
+*/
+
+// Transitions & Animations
+// ----------------------------------------------------------------------------
+a,
+input,
+button,
+textarea {
+	transition: all 0.3s ease-in-out;
+}
+svg {
+	transition: fill 0.3s ease-in-out;
+}
+// --- Animations --- \\
+@keyframes animSVG {
+	to {
+		stroke-dashoffset: 0;
+	}
+}
+@keyframes anim360 {
+	to {
+		transform: rotate(360deg);
+	}
+}
+@keyframes animFadeIn {
+	to {
+		opacity: 1;
+	}
+}
+@keyframes animShow {
+	0%   { opacity: 0; }
+	100% { opacity: 1; }
+}
+@keyframes animHide {
+	0%   { opacity: 1; left: 0; }
+	99%  { opacity: 0; left: 0; }
+	100% { opacity: 0; left: -200%; }
+}
+@keyframes animShake {
+	0%, 100% {
+		transform: translate3d(0,0,0);
+	}
+	10%, 30%, 50%, 70%, 90% {
+		transform: translate3d(-1rem,0,0);
+	}
+	20%, 40%, 60%, 80% {
+		transform: translate3d(1rem,0,0);
+	}
+}
+.animate_shake {
+	animation: animShake 0.7s ease-in-out both;
+}
+// --- FOUT --- \\
+html:not(.ie9) main,
+html:not(.ie9) header,
+html:not(.ie9) footer {
+	opacity: 0; // begin by setting opacity to 0 (if not IE9)
+	// animation: animShow 0.6s ease-in-out 0.2s forwards;
+}
+.wf-active main,
+.wf-active header,
+.wf-active footer {
+	animation: animShow 0.6s ease-in-out 0.2s forwards;
+}
+
+// General Styles
+// ----------------------------------------------------------------------------
+.wrap_element {
+	position: relative;
+}
+// + SVGs + \\
+#svgInject {
+	display: none;
+	visibility: hidden;
+}
+.wrap_svg {
+	display: block;
+}
+.wrap_svg svg {
+	width: 100%;
+	height: 100%;
+}
+svg.svg_inline {
+	display: inline; // chrome does not respect the [viewBox] selector
+}
+// --- Containers --- \\
+[data-container] {
+	margin-left: auto;
+	margin-right: auto;
+}
+[data-container="width_800"] {
+	max-width: 80rem;
+}
+[data-container="width_740"] {
+	max-width: 74rem;
+}
+[data-container="width_720"] {
+	max-width: 72rem;
+}
+[data-container="width_704"] {
+	max-width: 70.4rem;
+}
+[data-container="width_640"] {
+	max-width: 64rem;
+}
+[data-container="width_388"] {
+	max-width: 38.8rem;
+}
+// --- Sections --- \\
+header,
+footer,
+section {
+	padding: 4rem 1.6rem;
+}
+header,
+section {
+	text-align: center;
+}
+header a,
+section a {
+	color: $hsl_L0;
+}
+header a:hover,
+section a:hover {
+	color: $hsl_blue;
+}
+header a:active,
+section a:active {
+	color: $hsl_navy;
+}
+// --- Content --- \\
+h2 {
+	margin-bottom: 2rem;
+	font-size: 2.5rem;
+	font-weight: 700;
+}
+h3 {
+	font-size: 2.2rem;
+	font-weight: 700;
+}
+h4 {
+	margin-bottom: 2rem;
+	font-size: 2.4rem;
+}
+h5 {
+	margin-top: 3.2rem;
+	margin-bottom: 4rem;
+	font-size: 2rem;
+}
+p {
+	font-size: 1.6rem;
+	font-weight: 500;
+	line-height: 1.3;
+}
+span.font_arial {
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+// --- Forms --- \\
+div.wrap_inputs {
+	margin-bottom: 3.2rem;
+}
+input[type="tel"],
+input[type="text"],
+input[type="email"] {
+	padding-left: 1.6rem;
+	padding-right: 1.6rem;
+	width: 100%;
+	height: 5.2rem;
+	font-size: 1.6rem;
+	font-weight: 500;
+	text-align: center;
+	color: $hsl_L0;
+	background-color: $hsl_L100;
+	border-top: 0.1rem solid $hsl_L80;
+	border-left: 0.1rem solid $hsl_L80;
+	border-right: 0.1rem solid $hsl_L80;
+	-webkit-appearance: none; // prevent iOS inset shadow
+	   -moz-appearance: none; // prevent iOS inset shadow
+			appearance: none; // prevent iOS inset shadow
+	box-shadow: none; // prevent iOS inset shadow
+}
+input.signup_fname {
+	border-radius: 0.4rem 0.4rem 0 0;
+}
+input[type="tel"] {
+	border-bottom: 0.1rem solid $hsl_L80;
+	border-radius: 0 0 0.4rem 0.4rem;
+}
+input[type="submit"] {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 1.4rem 1rem;
+	width: 20rem;
+	font-size: 1.8rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: $hsl_L100;
+	background-color: $hsl_navy;
+	border-radius: 0.4rem;
+}
+// + interaction + \\
+input[type="tel"]:focus,
+input[type="text"]:focus,
+input[type="email"]:focus {
+	border-color: $hsl_blue;
+}
+input[type="text"]:focus + input,
+input[type="email"]:focus + input {
+	border-top-color: $hsl_blue;
+}
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+	background-color: $hsl_blue;
+}
+input[type="submit"]:active {
+	background-color: $hsl_navy;
+}
+
+// Header
+// ----------------------------------------------------------------------------
+header a.wrap_svg {
+	margin: 0 auto 5.2rem auto;
+	width: 15.2rem;
+}
+header a.wrap_svg svg {
+	fill: $hsl_L0;
+}
+header a.wrap_svg:hover svg {
+	fill: $hsl_blue;
+}
+header a.wrap_svg:active svg {
+	fill: $hsl_navy;
+}
+header p {
+	margin-bottom: 3.2rem;
+}
+// --- Navigation: Primary --- \\
+nav.nav_primary {
+	margin-bottom: 5.2rem;
+}
+nav.nav_primary ul li {
+	display: inline-block;
+}
+nav.nav_primary ul li {
+	margin-right: 2rem;
+}
+nav.nav_primary ul li:last-child {
+	margin-right: 0;
+}
+nav.nav_primary ul li a {
+	font-size: 1.8rem;
+}
+
+// Footer
+// ----------------------------------------------------------------------------
+footer {
+	background-color: $hsl_L10;
+}
+footer p {
+	margin-bottom: 0.6rem;
+	font-size: 1.3rem;
+	text-align: center;
+	color: $hsl_L50;
+}
+footer p:last-child {
+	margin-bottom: 0;
+}
+footer a {
+	color: $hsl_L50;
+}
+footer a svg {
+	fill: $hsl_L50;
+}
+// + interaction + \\
+footer a:hover {
+	color: $hsl_cyanL;
+}
+footer a:hover svg {
+	fill: $hsl_cyanL;
+}
+footer a:active {
+	color: $hsl_cyanD;
+}
+footer a:active svg {
+	fill: $hsl_cyanD;
+}
+// --- Navigation: Secondary --- \\
+nav.nav_secondary {
+	margin-bottom: 4.2rem;
+}
+nav.nav_secondary ul:not(.nav_social) {
+	margin-bottom: 3.2rem;
+}
+nav.nav_secondary ul li.nav_title {
+	margin-bottom: 1rem;
+	padding-bottom: 0.6rem;
+	font-size: 1.4rem;
+	font-weight: 700;
+	color: $hsl_L100;
+	border-bottom: 0.1rem solid $hsl_L40;
+}
+nav.nav_secondary ul li.nav_link {
+	margin-bottom: 1rem;
+}
+nav.nav_secondary ul li:last-child {
+	margin-bottom: 0;
+}
+nav.nav_secondary ul li.nav_link a {
+	font-size: 1.3rem;
+	font-weight: 500;
+}
+nav.nav_secondary ul li.nav_link a svg {
+	display: inline-block;
+	width: 2rem;
+	margin-right: 0.8rem;
+}
+
+// Why
+// ----------------------------------------------------------------------------
+section.why {
+	color: $hsl_L100;
+	background-color: $hsl_L2;
+	background-image: linear-gradient($hsl_L2, $hsl_L24);
+}
+section.why p {
+	margin-bottom: 2rem;
+}
+section.why p:last-child {
+	margin-bottom: 0;
+}
+
+// Features
+// ----------------------------------------------------------------------------
+section.features article:not(.integrations) {
+	margin-bottom: 5.2rem;
+}
+section.features article svg {
+	margin: 0 auto 2rem auto;
+}
+// --- Feature Articles --- \\
+svg.ui_handshake {
+	width: 7.4rem;
+	fill: $hsl_blue;
+}
+svg.ui_scale {
+	width: 4.8rem;
+	fill: $hsl_yellow;
+}
+svg.ui_headset {
+	width: 5.6rem;
+	fill: $hsl_navy;
+}
+svg.ui_pricetag {
+	width: 6.6rem;
+	fill: $hsl_green;
+}
+svg.ui_gears {
+	width: 7.8rem;
+	fill: $hsl_red;
+}
+
+// Brands
+// ----------------------------------------------------------------------------
+section.brands {
+	color: $hsl_L100;
+	background-color: $hsl_cyanD;
+	background-image: linear-gradient($hsl_cyanD, $hsl_cyanL);
+}
+section.brands h2 {
+	margin-bottom: 4.2rem;
+}
+// --- Brands List --- \\
+ul.list_brands {
+	margin-left: auto;
+	margin-right: auto;
+	width: 28.8rem;
+}
+ul.list_brands li {
+	float: left;
+}
+ul.list_brands li.brand_branham,
+ul.list_brands li.brand_shopify,
+ul.list_brands li.brand_sunmedia {
+	margin-right: 3.2rem;
+}
+ul.list_brands li:not(.brand_windmill) {
+	margin-bottom: 3.2rem;
+	width: 12.8rem;
+	min-height: 6.4rem;
+	line-height: 6.4rem;
+}
+ul.list_brands li.brand_windmill {
+	width: 100%;
+}
+ul.list_brands li img,
+ul.list_brands li svg {
+	display: inline-block;
+}

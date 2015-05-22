@@ -1,0 +1,9 @@
+/* the humans responsible & colophon */
+/* humanstxt.org */
+
+
+/* TEAM */
+
+	Northern Army: Curtis, Ryan, Rene, Sian, Mo
+	Site: http://northernarmy.com
+	Location: Ottawa, Ontario, Canada
